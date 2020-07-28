@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="recycler_view_margin">15dp</dimen>
+    <dimen name="list_item_margin">5dp</dimen>
+    <dimen name="card_view_corner_radius">2dp</dimen>
+    <dimen name="card_view_elevation">10dp</dimen>
+    <dimen name="fact_title_text_size">25sp</dimen>
+    <dimen name="fact_description_text_size">19sp</dimen>
+</resources>
