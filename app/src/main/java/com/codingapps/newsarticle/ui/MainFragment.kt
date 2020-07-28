@@ -3,7 +3,6 @@ package com.codingapps.newsarticle.ui
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -42,10 +41,10 @@ class MainFragment : Fragment() {
         Log.d(TAG, "setupViewModel: called")
         viewModel.getfacts()?.observe(viewLifecycleOwner, Observer {
             if (it == null) {
-                showAlertDialog2()
+                showAlertDialog()
             } else {
                 it?.rows?.let { it1 -> factAdapter.submitList(it1) }
-                //(activity as MainActivity).setActionBarTitle(it.title)
+                (activity as MainActivity).setActionBarTitle(it.title)
             }
         })
     }
@@ -57,7 +56,6 @@ class MainFragment : Fragment() {
             addItemDecoration(topSpacingDecorator)
             factAdapter = FactAdapter()
             adapter = factAdapter
-
         }
     }
 
@@ -81,13 +79,4 @@ class MainFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun MainFragment.showAlertDialog2() {
-        val builder: AlertDialog.Builder? = activity?.let {
-            AlertDialog.Builder(it)
-        }
-        builder?.setMessage(R.string.dialog_message)
-            ?.setTitle(R.string.dialog_title)
-            ?.setIcon(android.R.drawable.ic_dialog_alert)?.show()
-        val dialog: AlertDialog? = builder?.create()
-    }
 }
