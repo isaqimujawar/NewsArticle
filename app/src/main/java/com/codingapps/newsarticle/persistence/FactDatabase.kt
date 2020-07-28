@@ -1,22 +1,20 @@
-package com.codingapps.newsarticles.persistence
+package com.codingapps.newsarticle.persistence
 
 import android.app.Application
-import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.codingapps.newsarticles.model.Fact
-import com.codingapps.newsarticles.model.Topic
-import com.codingapps.newsarticles.repository.Repository
+import com.codingapps.newsarticle.model.Topic
 
 @Database(
     entities = [Topic::class],
-    version = 1)
+    version = 1
+)
 @TypeConverters(Converters::class)
-abstract class FactDatabase : RoomDatabase(){
+abstract class FactDatabase : RoomDatabase() {
 
-    abstract fun getFactDao():FactDao
+    abstract fun getFactDao(): FactDao
 
     companion object {
         @Volatile
@@ -27,7 +25,6 @@ abstract class FactDatabase : RoomDatabase(){
         operator fun invoke(application: Application) = instance ?: synchronized(LOCK) {
             instance ?: createDatabase(application).also { instance = it }
         }
-
 
         private fun createDatabase(application: Application) =
             Room.databaseBuilder(

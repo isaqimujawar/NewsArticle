@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.codingapps.newsarticles.R
-import com.codingapps.newsarticles.model.Fact
+import com.codingapps.newsarticle.R
+import com.codingapps.newsarticle.model.Fact
 import kotlinx.android.synthetic.main.layout_fact_list_item.view.*
 
 class FactAdapter : RecyclerView.Adapter<FactAdapter.FactViewHolder>() {
@@ -17,7 +17,7 @@ class FactAdapter : RecyclerView.Adapter<FactAdapter.FactViewHolder>() {
 
     private val differCallBack = object : DiffUtil.ItemCallback<Fact>() {
         override fun areItemsTheSame(oldItem: Fact, newItem: Fact): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.title == newItem.title
         }
 
         override fun areContentsTheSame(oldItem: Fact, newItem: Fact): Boolean {

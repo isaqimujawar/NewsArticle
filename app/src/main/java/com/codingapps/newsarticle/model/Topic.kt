@@ -1,8 +1,7 @@
-package com.codingapps.newsarticles.model
+package com.codingapps.newsarticle.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.codingapps.newsarticles.model.Fact
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NewsArticles</string>
+    <string name="app_name">NewsArticle</string>
     <string name="refresh">Refresh</string>
     <string name="dialog_message">Please check your internet connection and try again</string>
     <string name="dialog_title">No Internet Connection</string>
